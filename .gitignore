@@ -5,6 +5,7 @@ dist
 .output
 .nitro
 .tanstack
+.vercel
 
 # tooling scratch
 .gstack/
