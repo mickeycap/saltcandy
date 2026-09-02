@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <rect width="240" height="240" rx="24" fill="#F6EFE7"/>
+  <g stroke="#E8958B" stroke-width="10" stroke-linecap="round">
+    <path d="M156 120 178 96M168 136 198 122M84 120 62 96M72 136 42 122"/>
+  </g>
+  <path d="M120 68c16 30 36 54 36 68 0 19-16 28-36 28s-36-9-36-28c0-14 20-38 36-68Z" fill="#E8958B"/>
+  <path d="M132 6 102 48h16l-7 30 29-40h-16l8-32Z" fill="#E8958B" stroke="#F6EFE7" stroke-width="5" stroke-linejoin="round"/>
+  <g stroke="#F6EFE7" stroke-width="5" stroke-linejoin="round">
+    <path d="M82 134 68 158l-4 48h18Z" fill="#6E5F96"/>
+    <path d="M82 134l16 24 2 48H82Z" fill="#8B7BB4"/>
+    <path d="M158 134l14 24 4 48h-18Z" fill="#6E5F96"/>
+    <path d="M158 134l-16 24-2 48h18Z" fill="#8B7BB4"/>
+    <path d="M120 96 106 130l-4 76h18Z" fill="#6E5F96"/>
+    <path d="M120 96l14 34 4 76h-18Z" fill="#8B7BB4"/>
+    <path d="M120 96 106 130l14 17 14-17Z" fill="#E7E1F0"/>
+  </g>
+  <path d="M16 206c8-16 34-20 58-10 30 12 66 8 102-12 18-10 32-6 38 2-10 14-30 24-58 30-40 8-98 8-124 2-10-3-18-6-16-12Z" fill="#5B84A6"/>
+  <path d="M30 216c10-12 30-14 50-6 26 10 58 6 88-10 15-8 27-5 32 1-9 11-27 19-51 23-34 6-84 6-104 1-9-2-16-4-15-9Z" fill="#9FC3E0"/>
+  <text x="114" y="202" font-family="Georgia, serif" font-weight="700" font-size="66" text-anchor="middle" fill="#4A3F73" stroke="#F6EFE7" stroke-width="6" paint-order="stroke" stroke-linejoin="round">S</text>
+  <text x="154" y="174" font-family="Georgia, serif" font-weight="700" font-size="32" text-anchor="middle" fill="#4A3F73" stroke="#F6EFE7" stroke-width="5" paint-order="stroke" stroke-linejoin="round">3</text>
+</svg>

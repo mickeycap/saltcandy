@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SALTY SOUR SUCKERS — retro coastal lithograph tin
+   Every colour lives here as an oklch design token.
+   Components never hardcode a colour value.
+   ============================================================ */
+
+@theme {
+  /* ---- paper -------------------------------------------------- */
+  --color-cream: oklch(0.9554 0.0131 71.33);
+  --color-cream-deep: oklch(0.9207 0.0184 70.23);
+  --color-cream-deeper: oklch(0.8881 0.0231 71.76);
+
+  /* ---- ink ---------------------------------------------------- */
+  --color-ink: oklch(0.3023 0.0483 289.99);
+  --color-ink-soft: oklch(0.4095 0.0549 290.71);
+  --color-ink-mute: oklch(0.5240 0.0487 293.52);
+
+  /* ---- violet (primary) --------------------------------------- */
+  --color-violet: oklch(0.6194 0.0862 296.7);
+  --color-violet-deep: oklch(0.5228 0.0864 295.81);
+  --color-violet-deepest: oklch(0.4 0.0879 296.5);
+  --color-violet-ink: oklch(0.544 0.09 296.7);
+  --color-violet-pale: oklch(0.9188 0.0211 304.02);
+  --color-violet-band: oklch(0.9441 0.0156 306.41);
+
+  /* ---- coral -------------------------------------------------- */
+  --color-coral: oklch(0.7514 0.1021 27.22);
+  --color-coral-deep: oklch(0.6522 0.1204 27.81);
+  --color-coral-ink: oklch(0.55 0.12 27.22);
+  --color-coral-pale: oklch(0.9355 0.0248 29.93);
+
+  /* ---- wave --------------------------------------------------- */
+  --color-wave: oklch(0.8008 0.0565 242.76);
+  --color-deep-wave: oklch(0.5967 0.0693 244.34);
+  --color-wave-ink: oklch(0.534 0.07 242.76);
+  --color-deep-wave-ink: oklch(0.47 0.075 244.34);
+  --color-wave-pale: oklch(0.9405 0.0169 242.43);
+
+  /* ---- semantic roles ----------------------------------------- */
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-ink);
+  --color-surface: var(--color-cream);
+  --color-surface-raised: var(--color-cream-deep);
+  --color-surface-sunk: var(--color-cream-deeper);
+  --color-band: var(--color-violet-band);
+  --color-muted: var(--color-cream-deep);
+  --color-muted-foreground: var(--color-ink-soft);
+  --color-subtle-foreground: var(--color-ink-mute);
+  --color-border: var(--color-ink);
+  --color-primary: var(--color-violet);
+  --color-primary-hover: var(--color-violet-deep);
+  --color-primary-foreground: var(--color-cream);
+  --color-primary-text: var(--color-violet-ink);
+  --color-accent: var(--color-coral);
+  --color-accent-hover: var(--color-coral-deep);
+  --color-accent-foreground: var(--color-ink);
+  --color-accent-text: var(--color-coral-ink);
+  --color-info: var(--color-wave);
+  --color-info-text: var(--color-wave-ink);
+  --color-destructive: var(--color-coral-ink);
+  --color-destructive-foreground: var(--color-cream);
+  --color-on-ink: var(--color-cream);
+
+  /* ---- type --------------------------------------------------- */
+  --font-display: "Zilla Slab", "Zilla Slab Fallback", ui-serif, Georgia, serif;
+  --font-sans: "Libre Franklin", "Libre Franklin Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", ui-monospace, SFMono-Regular, monospace;
+
+  /* ---- printed-tin geometry ----------------------------------- */
+  --radius-tin: 0.25rem;
+  --spacing-rule: 2px;
+
+  /* ---- motion ------------------------------------------------- */
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-rock: rock 7s ease-in-out infinite;
+  --animate-drift: drift 8s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes rock {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes drift {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(360deg); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection {
+    background-color: var(--color-violet);
+    color: var(--color-cream);
+  }
+  :focus-visible {
+    outline: var(--spacing-rule) solid var(--color-ink);
+    outline-offset: 3px;
+  }
+  img { max-width: 100%; height: auto; }
+}
+
+/* ============================================================
+   Utilities — printed tin label texture & letterpress
+   ============================================================ */
+
+/* Paper grain: a fine printed dot screen over cream sections. */
+@utility grain {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      radial-gradient(
+        color-mix(in oklab, var(--color-ink) 9%, transparent) 0.5px,
+        transparent 0.6px
+      ),
+      radial-gradient(
+        color-mix(in oklab, var(--color-ink) 5%, transparent) 0.5px,
+        transparent 0.6px
+      );
+    background-size: 5px 5px, 11px 11px;
+    background-position: 0 0, 2px 3px;
+  }
+}
+
+/* Letterpress misregistration: ink stroke + offset ink & coral plates. */
+@utility litho {
+  paint-order: stroke fill;
+  -webkit-text-stroke: 1px var(--color-ink);
+  text-shadow:
+    3px 3px 0 var(--color-ink),
+    6px 6px 0 color-mix(in oklab, var(--color-coral) 38%, transparent);
+}
+
+/* Lighter plate offset for large ink-filled headings. */
+@utility litho-soft {
+  text-shadow: 2px 2px 0 color-mix(in oklab, var(--color-coral) 55%, transparent);
+}
+
+/* Hard printed edge: 2px ink rule + solid offset block shadow. */
+@utility rule {
+  border: var(--spacing-rule) solid var(--color-border);
+}
+@utility block-shadow {
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+}
+@utility block-shadow-sm {
+  box-shadow: 3px 3px 0 0 var(--color-ink);
+}
+
+/* Tactile hover: lift up-left onto a solid offset plate. */
+@utility lift {
+  transition:
+    transform 140ms ease-out,
+    box-shadow 140ms ease-out,
+    background-color 140ms ease-out,
+    color 140ms ease-out;
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 var(--color-ink);
+  }
+  &:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0 0 var(--color-ink);
+  }
+}
+
+/* Mono spec label, as stamped on the base of a tin. */
+@utility stamp {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.6875rem;
+  line-height: 1.2;
+}
+
+/* Tighter stamp for corner badges, where card width is scarce. */
+@utility stamp-tight {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.625rem;
+  line-height: 1.2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .lift:hover { transform: none; }
+}
