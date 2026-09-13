@@ -17,9 +17,8 @@ export function Hero() {
             From the first pause to the last.
           </p>
           <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Two candies in development — one for the start of the day, one for
-            winding it down. Made to taste good first, and to fit the moment
-            second.
+            Two candies in development: Morning Shift and Evening Shift. Made to
+            taste good first.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
             <LaunchCta />
@@ -30,7 +29,7 @@ export function Hero() {
         </div>
 
         {/* Prototype hero crop: 492×289 source with baked-in labels. Never
-            upscaled past its native width, so it stays as sharp as it can. */}
+            upscaled past its native width. */}
         <figure className="relative mx-auto w-full max-w-[492px] lg:max-w-none">
           <Horizon className="absolute inset-0 -z-10 h-full w-full rounded-card" />
           <picture className="block p-3 sm:p-5">

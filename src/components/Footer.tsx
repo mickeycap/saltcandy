@@ -12,8 +12,8 @@ export function Footer() {
           <Logo size="lg" />
           <p className="mt-3 text-lg font-medium text-ink">{TAGLINE}</p>
           <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Products, packaging, ingredients and claims are in development and
-            subject to review. Nothing on this site is currently for sale.
+            Products, packaging, ingredients and claims are in development.
+            Nothing here is for sale.
           </p>
         </div>
 

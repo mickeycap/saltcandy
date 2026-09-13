@@ -15,7 +15,7 @@ function ConceptCard({ concept }: { concept: Concept }) {
           {concept.status}
         </p>
         {/* Prototype crop (~355×333) with the pouch label baked in; capped at
-            native width so it never softens further. */}
+            native width. */}
         <picture className="block">
           <source
             type="image/webp"
@@ -50,7 +50,7 @@ function ConceptCard({ concept }: { concept: Concept }) {
           </div>
           <div className="flex gap-3">
             <dt className="w-24 shrink-0 font-semibold text-ink">Format</dt>
-            <dd className="text-muted-foreground">Hard or sour candy concept — may change during development</dd>
+            <dd className="text-muted-foreground">Hard or sour candy; may change during development</dd>
           </div>
         </dl>
 
@@ -68,7 +68,7 @@ export function ProductConcepts() {
       <SectionHeading
         eyebrow="Two moments"
         title="Different moments. Same you."
-        lede="Both concepts are in development. Flavours, ingredients, formats and serving sizes are still being worked out — and we'd rather get one candy excellent than two candies rushed."
+        lede="Both are in development. Flavours, ingredients, formats and serving sizes are still being worked out."
       />
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:gap-8">
         {CONCEPTS.map((concept) => (
@@ -76,7 +76,7 @@ export function ProductConcepts() {
         ))}
       </div>
       <p className="mt-6 text-sm text-muted-foreground">
-        Packaging, ingredients and claims are subject to development and review. Nothing shown is for sale.
+        Packaging, ingredients and claims are subject to review. Nothing shown is for sale.
       </p>
     </Section>
   )

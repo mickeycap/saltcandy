@@ -1,7 +1,8 @@
 /**
  * Product concepts. These are development directions, not SKUs: no prices,
  * no stock, no serving sizes, no ingredient quantities. Copy here must stay
- * within the claims guidance in LAUNCH-BLOCKERS.md.
+ * within the claims guidance in LAUNCH-BLOCKERS.md. The "Exploring" label on
+ * the card supplies the hedge, so functionDirection is a bare noun phrase.
  */
 export type ConceptTone = 'morning' | 'evening'
 
@@ -29,11 +30,11 @@ export const CONCEPTS: readonly Concept[] = [
   {
     slug: 'morning-shift',
     name: 'Morning Shift',
-    moment: 'For the first pause of the day',
+    moment: 'First pause of the day',
     flavorDirection: 'Salty lemon + ginger',
-    functionDirection: 'Nootropic ingredients under exploration',
+    functionDirection: 'Nootropic ingredients',
     description:
-      'Bright, a little salty, with ginger warmth on the finish. A candy for the moment before the day gets loud.',
+      'Bright and a little salty, with ginger warmth on the finish. For the moment before the day gets loud.',
     tone: 'morning',
     status: 'In development',
     image: {
@@ -48,11 +49,11 @@ export const CONCEPTS: readonly Concept[] = [
   {
     slug: 'evening-shift',
     name: 'Evening Shift',
-    moment: 'For winding down',
+    moment: 'Winding down',
     flavorDirection: 'Tart cherry',
-    functionDirection: 'Magnesium and other evening ingredients under exploration',
+    functionDirection: 'Magnesium and other evening ingredients',
     description:
-      'Deep, tart and unhurried. A candy for the moment the day finally lets go of you.',
+      'Deep, tart and unhurried. For the moment the day lets go of you.',
     tone: 'evening',
     status: 'In development',
     image: {

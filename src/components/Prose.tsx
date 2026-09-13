@@ -21,10 +21,10 @@ export function LegalPage({
           role="note"
           className="mt-8 rounded-card border border-cherry/30 bg-cherry/5 p-4 text-sm leading-relaxed text-ink"
         >
-          <strong className="font-semibold">Draft — not yet legally reviewed.</strong> This page
-          describes the prototype website as actually built. Items shown as{' '}
-          <Placeholder>like this</Placeholder> are business or legal details that still need an
-          owner decision and review before launch.
+          <strong className="font-semibold">Draft, not yet legally reviewed.</strong> This page
+          describes the prototype site as built. Items shown{' '}
+          <Placeholder>like this</Placeholder> need an owner decision and legal review before
+          launch.
         </div>
 
         <div className="prose-shift mt-10 space-y-8 leading-relaxed text-ink [&_h2]:mt-10 [&_h2]:text-2xl [&_h3]:text-lg [&_h3]:font-semibold [&_p]:mt-3 [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5">

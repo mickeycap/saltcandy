@@ -48,7 +48,7 @@ export function writeConsent(choice: Pick<Consent, 'analytics' | 'marketing'>): 
     try {
       window.localStorage.setItem(CONSENT_KEY, JSON.stringify(record))
     } catch {
-      /* storage unavailable (private mode, blocked) — treat as session-only */
+      /* storage unavailable (private mode, blocked): treat as session-only */
     }
     window.dispatchEvent(new CustomEvent(CHANGE_EVENT, { detail: record }))
   }

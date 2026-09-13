@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Self-hosted type at stable URLs (public/fonts, SIL OFL — licences alongside)
+/* Self-hosted type at stable URLs (public/fonts, SIL OFL, licences alongside)
    so the two text-critical faces can be preloaded from the root route. Only the
    faces the design uses: Geist 700 for headings, Inter 400/500/600. Latin subset. */
 @font-face {
@@ -37,11 +37,11 @@
 }
 
 /* ============================================================
-   SHIFT — candy for moments
+   SHIFT: candy for moments
    Every colour is an oklch token here. Components only use
    semantic roles; no raw hex or stock Tailwind colours.
-   Board values: Cream #F8F4E9 · Ink #2E1B3D · Citrus #FAB223
-                 Cherry #882C3F · Dusk #C9B8E6
+   Board values: Cream #F8F4E9, Ink #2E1B3D, Citrus #FAB223,
+                 Cherry #882C3F, Dusk #C9B8E6
    ============================================================ */
 
 @theme {

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 
 /**
  * The one primary conversion action. Every instance goes to the same signup
- * section on the homepage — no competing purchase, account or quiz CTAs.
+ * section on the homepage; no competing purchase, account or quiz CTAs.
  */
 export function LaunchCta({
   variant = 'primary',
