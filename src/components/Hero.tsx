@@ -1,69 +1,59 @@
-import { Emblem } from './Emblem'
-import { Sparkle, WaveRule } from './Motifs'
+import { ArrowLink, LaunchCta } from './LaunchCta'
+import { Horizon } from './Horizon'
 
 export function Hero() {
   return (
-    <section id="top" className="grain relative overflow-hidden bg-cream">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 pt-14 pb-24 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:pt-20 lg:pb-32">
-        {/* ---- copy ---- */}
-        <div>
-          <p className="rule inline-block rounded-tin bg-surface-raised px-3 py-1.5 stamp text-ink">
-            Small batch · Electrolyte candy
+    <section className="relative overflow-hidden">
+      <div className="wrap grid items-center gap-10 pt-12 pb-16 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:pt-20 lg:pb-24">
+        <div className="max-w-xl">
+          <p className="mb-5 inline-flex items-center gap-2 rounded-pill border border-ink/15 px-3 py-1.5 text-xs font-semibold tracking-wide text-ink uppercase">
+            <span className="h-2 w-2 rounded-full bg-citrus" aria-hidden="true" />
+            In development
           </p>
-
-          <h1 className="litho mt-7 font-display text-[2.5rem] leading-[0.95] font-semibold text-ink [text-wrap:initial] sm:text-6xl lg:text-[4.25rem]">
-            Salty. <span className="text-accent-text">Sour.</span>
-            <br />
-            Built for
-            <br />
-            the <span className="text-primary-text">long haul.</span>
+          <h1 className="text-[2.75rem] leading-[1.02] sm:text-6xl lg:text-[4.25rem]">
+            Candy for moments.
           </h1>
-
-          <p className="mt-8 max-w-md text-lg leading-relaxed text-muted-foreground">
-            Pressed salty-sour tablets with sodium, potassium and magnesium. Two
-            tins, one with caffeine and one without — the morning run and the
-            last set, covered.
+          <p className="mt-5 max-w-md text-xl leading-snug text-ink sm:text-2xl">
+            From the first pause to the last.
           </p>
-
-          <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
-            <a
-              href="#flavors"
-              className="lift rule rounded-tin bg-primary px-6 py-3.5 font-display text-base uppercase tracking-[0.06em] text-primary-foreground block-shadow"
-            >
-              Shop the tins — $12
-            </a>
-            <a
-              href="#formula"
-              className="stamp text-ink underline decoration-accent decoration-2 underline-offset-[6px] transition-colors hover:text-accent-text"
-            >
-              See the formula
-            </a>
+          <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Two candies in development — one for the start of the day, one for
+            winding it down. Made to taste good first, and to fit the moment
+            second.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <LaunchCta />
+            <ArrowLink to="/" hash="products">
+              See the concepts
+            </ArrowLink>
           </div>
         </div>
 
-        {/* ---- emblem ---- */}
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <Sparkle className="absolute top-2 left-2 h-7 w-7 animate-drift text-accent motion-reduce:animate-none" />
-          <Sparkle className="absolute right-6 bottom-10 h-5 w-5 animate-drift text-primary motion-reduce:animate-none [animation-duration:11s]" />
-
-          <div className="rule grain relative rounded-tin bg-surface-raised p-6 block-shadow sm:p-10">
-            <p className="stamp text-center text-ink">Salty Sour Suckers · Pocket Tin</p>
-            <Emblem className="mx-auto mt-4 w-full max-w-sm animate-rock motion-reduce:animate-none" />
-            <div className="mt-5 flex flex-col items-center gap-3">
-              <WaveRule className="h-4 w-40 text-info" />
-              <p className="stamp text-center text-ink">
-                Salty · Refreshing · Recharging
-              </p>
-            </div>
-          </div>
-        </div>
+        {/* Prototype hero crop: 492×289 source with baked-in labels. Never
+            upscaled past its native width, so it stays as sharp as it can. */}
+        <figure className="relative mx-auto w-full max-w-[492px] lg:max-w-none">
+          <Horizon className="absolute inset-0 -z-10 h-full w-full rounded-card" />
+          <picture className="block p-3 sm:p-5">
+            <source
+              type="image/webp"
+              srcSet="/shift/hero-scene-sm.webp 246w, /shift/hero-scene.webp 492w"
+              sizes="(min-width: 1024px) 492px, min(100vw - 2.5rem, 492px)"
+            />
+            <img
+              src="/shift/hero-scene.png"
+              width={492}
+              height={289}
+              alt="Morning Shift and Evening Shift concept pouches on a cream surface with lemon, ginger, cherries and hard candies"
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              className="mx-auto w-full max-w-[492px] rounded-[calc(var(--radius-card)-0.4rem)] shadow-[0_24px_60px_-30px_var(--color-plum)]"
+            />
+          </picture>
+          <figcaption className="sr-only">Prototype product concepts, packaging in development.</figcaption>
+        </figure>
       </div>
-
-      {/* wave line at the base of the section */}
-      <WaveRule
-        className="absolute inset-x-0 bottom-0 h-8 w-full text-info"
-        aria-hidden="true"
-      />
+      <div className="hairline" />
     </section>
   )
 }
