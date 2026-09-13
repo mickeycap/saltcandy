@@ -1,100 +1,101 @@
 @import "tailwindcss";
 
+/* Self-hosted type at stable URLs (public/fonts, SIL OFL — licences alongside)
+   so the two text-critical faces can be preloaded from the root route. Only the
+   faces the design uses: Geist 700 for headings, Inter 400/500/600. Latin subset. */
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/geist-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/inter-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/inter-latin-600-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
 /* ============================================================
-   SALTY SOUR SUCKERS — retro coastal lithograph tin
-   Every colour lives here as an oklch design token.
-   Components never hardcode a colour value.
+   SHIFT — candy for moments
+   Every colour is an oklch token here. Components only use
+   semantic roles; no raw hex or stock Tailwind colours.
+   Board values: Cream #F8F4E9 · Ink #2E1B3D · Citrus #FAB223
+                 Cherry #882C3F · Dusk #C9B8E6
    ============================================================ */
 
 @theme {
-  /* ---- paper -------------------------------------------------- */
-  --color-cream: oklch(0.9554 0.0131 71.33);
-  --color-cream-deep: oklch(0.9207 0.0184 70.23);
-  --color-cream-deeper: oklch(0.8881 0.0231 71.76);
-
-  /* ---- ink ---------------------------------------------------- */
-  --color-ink: oklch(0.3023 0.0483 289.99);
-  --color-ink-soft: oklch(0.4095 0.0549 290.71);
-  --color-ink-mute: oklch(0.5240 0.0487 293.52);
-
-  /* ---- violet (primary) --------------------------------------- */
-  --color-violet: oklch(0.6194 0.0862 296.7);
-  --color-violet-deep: oklch(0.5228 0.0864 295.81);
-  --color-violet-deepest: oklch(0.4 0.0879 296.5);
-  --color-violet-ink: oklch(0.544 0.09 296.7);
-  --color-violet-pale: oklch(0.9188 0.0211 304.02);
-  --color-violet-band: oklch(0.9441 0.0156 306.41);
-
-  /* ---- coral -------------------------------------------------- */
-  --color-coral: oklch(0.7514 0.1021 27.22);
-  --color-coral-deep: oklch(0.6522 0.1204 27.81);
-  --color-coral-ink: oklch(0.55 0.12 27.22);
-  --color-coral-pale: oklch(0.9355 0.0248 29.93);
-
-  /* ---- wave --------------------------------------------------- */
-  --color-wave: oklch(0.8008 0.0565 242.76);
-  --color-deep-wave: oklch(0.5967 0.0693 244.34);
-  --color-wave-ink: oklch(0.534 0.07 242.76);
-  --color-deep-wave-ink: oklch(0.47 0.075 244.34);
-  --color-wave-pale: oklch(0.9405 0.0169 242.43);
+  /* ---- board palette ------------------------------------------ */
+  --color-cream: oklch(0.9672 0.0152 90.23);
+  --color-cream-deep: oklch(0.942 0.019 88);
+  --color-ink: oklch(0.2643 0.0652 308.36);
+  --color-ink-soft: oklch(0.42 0.06 308);
+  --color-citrus: oklch(0.8113 0.1617 77.83);
+  --color-citrus-soft: oklch(0.955 0.055 86);
+  --color-cherry: oklch(0.4357 0.1255 11.69);
+  --color-cherry-deep: oklch(0.37 0.12 12);
+  --color-dusk: oklch(0.8119 0.0663 301.81);
+  --color-dusk-soft: oklch(0.935 0.035 302);
+  --color-plum: oklch(0.34 0.09 318);
 
   /* ---- semantic roles ----------------------------------------- */
   --color-background: var(--color-cream);
   --color-foreground: var(--color-ink);
-  --color-surface: var(--color-cream);
-  --color-surface-raised: var(--color-cream-deep);
-  --color-surface-sunk: var(--color-cream-deeper);
-  --color-band: var(--color-violet-band);
-  --color-muted: var(--color-cream-deep);
+  --color-surface: var(--color-cream-deep);
   --color-muted-foreground: var(--color-ink-soft);
-  --color-subtle-foreground: var(--color-ink-mute);
-  --color-border: var(--color-ink);
-  --color-primary: var(--color-violet);
-  --color-primary-hover: var(--color-violet-deep);
+  --color-primary: var(--color-ink);
+  --color-primary-hover: var(--color-plum);
   --color-primary-foreground: var(--color-cream);
-  --color-primary-text: var(--color-violet-ink);
-  --color-accent: var(--color-coral);
-  --color-accent-hover: var(--color-coral-deep);
-  --color-accent-foreground: var(--color-ink);
-  --color-accent-text: var(--color-coral-ink);
-  --color-info: var(--color-wave);
-  --color-info-text: var(--color-wave-ink);
-  --color-destructive: var(--color-coral-ink);
-  --color-destructive-foreground: var(--color-cream);
-  --color-on-ink: var(--color-cream);
+  --color-link: var(--color-cherry);
+  --color-link-hover: var(--color-cherry-deep);
+  --color-morning: var(--color-citrus);
+  --color-morning-soft: var(--color-citrus-soft);
+  --color-evening: var(--color-dusk);
+  --color-evening-soft: var(--color-dusk-soft);
+  --color-evening-deep: var(--color-plum);
+  --color-danger: var(--color-cherry);
 
   /* ---- type --------------------------------------------------- */
-  --font-display: "Zilla Slab", "Zilla Slab Fallback", ui-serif, Georgia, serif;
-  --font-sans: "Libre Franklin", "Libre Franklin Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", ui-monospace, SFMono-Regular, monospace;
+  --font-heading: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* ---- printed-tin geometry ----------------------------------- */
-  --radius-tin: 0.25rem;
-  --spacing-rule: 2px;
+  /* ---- shape -------------------------------------------------- */
+  --radius-card: 1.25rem;
+  --radius-pill: 9999px;
 
   /* ---- motion ------------------------------------------------- */
-  --animate-marquee: marquee 32s linear infinite;
-  --animate-rock: rock 7s ease-in-out infinite;
-  --animate-drift: drift 8s ease-in-out infinite;
+  --animate-drift: drift 14s ease-in-out infinite;
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@keyframes rock {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
-}
 @keyframes drift {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(360deg); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 5.5rem;
     -webkit-text-size-adjust: 100%;
   }
   body {
@@ -106,110 +107,64 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 {
-    font-family: var(--font-display);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.025em;
     text-wrap: balance;
   }
   p { text-wrap: pretty; }
   ::selection {
-    background-color: var(--color-violet);
-    color: var(--color-cream);
+    background-color: var(--color-citrus);
+    color: var(--color-ink);
   }
   :focus-visible {
-    outline: var(--spacing-rule) solid var(--color-ink);
+    outline: 2px solid var(--color-ink);
     outline-offset: 3px;
+    border-radius: 4px;
   }
-  img { max-width: 100%; height: auto; }
+  img, picture { max-width: 100%; height: auto; display: block; }
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
 }
 
-/* ============================================================
-   Utilities — printed tin label texture & letterpress
-   ============================================================ */
-
-/* Paper grain: a fine printed dot screen over cream sections. */
-@utility grain {
-  position: relative;
-  isolation: isolate;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-image:
-      radial-gradient(
-        color-mix(in oklab, var(--color-ink) 9%, transparent) 0.5px,
-        transparent 0.6px
-      ),
-      radial-gradient(
-        color-mix(in oklab, var(--color-ink) 5%, transparent) 0.5px,
-        transparent 0.6px
-      );
-    background-size: 5px 5px, 11px 11px;
-    background-position: 0 0, 2px 3px;
-  }
+/* Page gutter + max width from the board: ~1240px content, responsive gutters. */
+@utility wrap {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= 40rem) { padding-inline: 2rem; }
 }
 
-/* Letterpress misregistration: ink stroke + offset ink & coral plates. */
-@utility litho {
-  paint-order: stroke fill;
-  -webkit-text-stroke: 1px var(--color-ink);
-  text-shadow:
-    3px 3px 0 var(--color-ink),
-    6px 6px 0 color-mix(in oklab, var(--color-coral) 38%, transparent);
+/* Thin neutral separator. */
+@utility hairline {
+  border-top: 1px solid color-mix(in oklab, var(--color-ink) 12%, transparent);
 }
 
-/* Lighter plate offset for large ink-filled headings. */
-@utility litho-soft {
-  text-shadow: 2px 2px 0 color-mix(in oklab, var(--color-coral) 55%, transparent);
+/* Understated pill buttons. Primary is the single conversion action. */
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding-inline: 1.5rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+  &:active { transform: translateY(1px); }
 }
 
-/* Hard printed edge: 2px ink rule + solid offset block shadow. */
-@utility rule {
-  border: var(--spacing-rule) solid var(--color-border);
-}
-@utility block-shadow {
-  box-shadow: 4px 4px 0 0 var(--color-ink);
-}
-@utility block-shadow-sm {
-  box-shadow: 3px 3px 0 0 var(--color-ink);
-}
-
-/* Tactile hover: lift up-left onto a solid offset plate. */
-@utility lift {
-  transition:
-    transform 140ms ease-out,
-    box-shadow 140ms ease-out,
-    background-color 140ms ease-out,
-    color 140ms ease-out;
-  &:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 0 var(--color-ink);
-  }
-  &:active {
-    transform: translate(0, 0);
-    box-shadow: 2px 2px 0 0 var(--color-ink);
-  }
-}
-
-/* Mono spec label, as stamped on the base of a tin. */
-@utility stamp {
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.6875rem;
-  line-height: 1.2;
-}
-
-/* Tighter stamp for corner badges, where card width is scarce. */
-@utility stamp-tight {
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.625rem;
-  line-height: 1.2;
+/* Visually hidden, still announced. */
+@utility sr-only-focusable {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  &:focus { transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -219,5 +174,4 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
   }
-  .lift:hover { transform: none; }
 }

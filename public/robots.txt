@@ -1,0 +1,6 @@
+# SHIFT prototype. Indexing is controlled by the robots meta tag and the
+# X-Robots-Tag header (noindex everywhere except Vercel production); this file
+# is not a security control. A Sitemap: line is added once the production
+# domain is confirmed.
+User-agent: *
+Allow: /
