@@ -2,7 +2,7 @@ import { useId, useState, type FormEvent } from 'react'
 import { Section } from './Section'
 
 /**
- * Prelaunch signup — DEMO.
+ * Prelaunch signup: DEMO.
  *
  * No email provider is configured in this repository, so this form validates
  * locally and deliberately does not transmit or store the address anywhere.
@@ -24,7 +24,7 @@ export function LaunchSignup() {
     e.preventDefault()
     const value = email.trim()
     if (!value) return setError('Enter an email address to continue.')
-    if (!EMAIL_RE.test(value)) return setError('That doesn’t look like an email address. Check it and try again.')
+    if (!EMAIL_RE.test(value)) return setError('That doesn’t look like an email address.')
     setError(null)
     // Demo: nothing leaves the browser. Do not add a network call here without
     // a server-side handler, validation and abuse protection.
@@ -38,8 +38,8 @@ export function LaunchSignup() {
         <p className="mb-3 text-sm font-semibold tracking-wide text-link uppercase">Launch list</p>
         <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem]">Get launch updates.</h2>
         <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-          One email when there’s something real to try. No countdowns, no
-          drip campaigns.
+          One email when there’s something to try. No countdowns, no drip
+          campaigns.
         </p>
 
         <form
@@ -81,12 +81,12 @@ export function LaunchSignup() {
         </form>
 
         <p id={noteId} className="mx-auto mt-4 max-w-md text-xs leading-relaxed text-muted-foreground">
-          <strong className="font-semibold text-ink">Prototype demo:</strong> this form doesn’t
-          send or store anything yet. No email provider is connected.
+          <strong className="font-semibold text-ink">Prototype demo:</strong> nothing is sent or
+          stored yet. No email provider is connected.
         </p>
 
         <p role="status" aria-live="polite" className="mt-4 min-h-6 text-sm font-medium text-ink">
-          {demoDone ? 'Demo only — nothing was sent or stored. A real confirmation will appear here once a provider is connected.' : ''}
+          {demoDone ? 'Demo only. Nothing was sent or stored.' : ''}
         </p>
       </div>
     </Section>

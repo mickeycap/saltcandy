@@ -4,7 +4,7 @@
  * SITE_URL is a documented placeholder until the production domain is
  * confirmed (see LAUNCH-BLOCKERS.md). INDEXABLE is a build-time boolean set in
  * vite.config.ts from VERCEL_ENV, so previews carry noindex and production does
- * not — the meta tag below is what search engines honour; robots.txt is not.
+ * not. The meta tag below is what search engines honour; robots.txt is not.
  */
 export const SITE_NAME = 'SHIFT'
 export const TAGLINE = 'Candy for moments.'
@@ -28,7 +28,7 @@ type PageHeadInput = {
  *  cards stay consistent and the preview noindex can never be forgotten. */
 export function pageHead({ title, description, path }: PageHeadInput) {
   const url = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`
-  const fullTitle = path === '/' ? `${SITE_NAME} — ${TAGLINE}` : `${title} — ${SITE_NAME}`
+  const fullTitle = path === '/' ? `${SITE_NAME} | ${TAGLINE}` : `${title} | ${SITE_NAME}`
   return {
     meta: [
       { title: fullTitle },
@@ -42,7 +42,7 @@ export function pageHead({ title, description, path }: PageHeadInput) {
       { property: 'og:image', content: SOCIAL_IMAGE },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
-      { property: 'og:image:alt', content: `${SITE_NAME} — ${TAGLINE}` },
+      { property: 'og:image:alt', content: `${SITE_NAME}: ${TAGLINE}` },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: fullTitle },
       { name: 'twitter:description', content: description },

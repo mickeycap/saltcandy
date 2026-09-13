@@ -54,9 +54,8 @@ export function CookieConsent() {
         >
           <p className="text-sm font-semibold text-ink">Cookies and storage</p>
           <p className="mt-1 text-[0.8125rem] leading-snug text-muted-foreground sm:text-sm sm:leading-relaxed">
-            This site only uses strictly necessary storage — your choice here is
-            the only thing it saves. Optional analytics and marketing tools are
-            currently disabled. See the{' '}
+            This site only stores your choice here. Optional analytics and
+            marketing tools are disabled. See the{' '}
             <Link to="/privacy" className="font-medium text-link underline underline-offset-2">
               privacy policy
             </Link>
@@ -100,8 +99,8 @@ export function CookieConsent() {
         <form method="dialog" onSubmit={(e) => e.preventDefault()}>
           <h2 id={headingId} className="text-2xl">Cookie preferences</h2>
           <p id={descId} className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Choose which optional categories may be used. You can change this
-            any time from the footer.
+            Choose which optional categories may be used. Change this any time
+            from the footer.
           </p>
 
           <ul className="mt-6 divide-y divide-ink/10 border-y border-ink/10">
@@ -116,13 +115,13 @@ export function CookieConsent() {
             </li>
             <Toggle
               label="Analytics"
-              description="Not currently used. No analytics script is loaded on this prototype, whatever you choose."
+              description="Not used. No analytics script loads on this prototype, whatever you choose."
               checked={analytics}
               onChange={setAnalytics}
             />
             <Toggle
               label="Marketing"
-              description="Not currently used. No pixels or ad tools are loaded on this prototype."
+              description="Not used. No pixels or ad tools load on this prototype."
               checked={marketing}
               onChange={setMarketing}
             />

@@ -7,7 +7,7 @@ export function Lifestyle() {
     <Section id="moments">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         {/* Prototype lifestyle crop (297×304) with headline and logo baked in.
-            Shown small on purpose; a text-free render replaces it before launch. */}
+            Shown small on purpose until a text-free render replaces it. */}
         <figure className="order-2 mx-auto w-full max-w-[297px] overflow-hidden rounded-card bg-surface lg:order-1 lg:justify-self-end">
           <picture>
             <source type="image/webp" srcSet="/shift/social-moment-sm.webp 148w, /shift/social-moment.webp 297w" sizes="297px" />
@@ -15,7 +15,7 @@ export function Lifestyle() {
               src="/shift/social-moment.png"
               width={297}
               height={304}
-              alt="Three SHIFT hard candies — two golden, one cherry red — on a stone surface in soft light"
+              alt="Three SHIFT hard candies, two golden and one cherry red, on a stone surface in soft light"
               loading="lazy"
               decoding="async"
               className="w-full"
@@ -26,9 +26,8 @@ export function Lifestyle() {
           <p className="mb-3 text-sm font-semibold tracking-wide text-link uppercase">Moments</p>
           <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem]">Make room for a moment.</h2>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            A little candy, a short pause. Not a ritual, not a regimen — just
-            something small and good, at the points in the day where a small
-            good thing is welcome.
+            A little candy, a short pause. Not a ritual, not a regimen. Just
+            something small and good at the points in the day that call for one.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {MOMENTS.map((m) => (

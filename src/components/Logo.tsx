@@ -3,7 +3,7 @@
  *
  * The board's generated wordmark swaps the "I" for the symbol, which is what
  * obscures it. Here all five letters stay as real type, and the offset
- * semicircles — citrus rising over cherry, the day-to-night horizon — sit
+ * semicircles (citrus rising over cherry, the day-to-night horizon) sit
  * beside the word as the symbol. Both recolour with the theme.
  */
 
@@ -14,7 +14,7 @@ export function Symbol({ className, tone = 'ink' }: { className?: string; tone?:
     <svg viewBox="0 0 64 64" aria-hidden="true" className={className} focusable="false">
       {/* upper semicircle: citrus, centred */}
       <path d="M12 33a20 20 0 0 1 40 0Z" fill="var(--color-citrus)" />
-      {/* lower semicircle: cherry, offset right — the "shift" */}
+      {/* lower semicircle: cherry, offset right, the "shift" */}
       <path
         d="M18 33a20 20 0 0 0 40 0Z"
         fill={tone === 'cream' ? 'var(--color-dusk)' : 'var(--color-cherry)'}

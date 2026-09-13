@@ -3,15 +3,15 @@ import { Section, SectionHeading } from './Section'
 const PRINCIPLES = [
   {
     title: 'Taste is the whole point',
-    body: 'If it isn’t a candy you’d reach for on its own merits, the rest doesn’t matter. Flavour leads every decision.',
+    body: 'If you wouldn’t reach for it as a candy, nothing else matters.',
   },
   {
     title: 'Function that earns its place',
-    body: 'We’re only interested in ingredients at amounts that could matter in a practical serving. No token pinches, no placebo dosing.',
+    body: 'Ingredients only at amounts that could matter in a practical serving. No token pinches, no placebo dosing.',
   },
   {
     title: 'Simple, and worked out properly',
-    body: 'Short ingredient lists, and real attention to how a candy behaves — for teeth, for stomachs, for shipping in summer. These are development priorities, not finished promises.',
+    body: 'Short ingredient lists, and attention to how a candy behaves: for teeth, for stomachs, for shipping in summer. Development priorities, not promises.',
   },
 ]
 
@@ -22,7 +22,7 @@ export function Philosophy() {
         tone="cream"
         eyebrow="Our philosophy"
         title="Candy first. Function second."
-        lede="SHIFT is candy people can enjoy as a treat, and come to associate with moments in their day: work, workouts, breaks, winding down. The order of those two words is deliberate."
+        lede="Candy you’d enjoy as a treat, that fits the moments of your day: work, workouts, breaks, winding down. The order of those words is deliberate."
       />
       <ol className="mt-12 grid gap-8 md:grid-cols-3">
         {PRINCIPLES.map((p, i) => (
