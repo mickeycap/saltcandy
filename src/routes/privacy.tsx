@@ -28,7 +28,7 @@ function PrivacyPage() {
       <section>
         <h2>Information we collect</h2>
         <p>
-          <strong>Right now, the site does not collect personal information.</strong> Specifically:
+          <strong>The demo signup does not send or store your email address.</strong> Hosting request logs may contain personal information, as described below.
         </p>
         <ul>
           <li>
@@ -38,8 +38,8 @@ function PrivacyPage() {
             name the provider and explain retention before the form goes live.
           </li>
           <li>
-            <strong>Server logs.</strong> Our hosting provider (<Placeholder>confirm: Vercel</Placeholder>)
-            may keep standard, short-lived request logs (such as IP address, user agent and the pages
+            <strong>Server logs.</strong> Our hosting provider, Vercel,
+            may keep standard request logs (such as IP address, user agent and the pages
             requested) for operating and securing the service. We do not add tracking to these logs.
           </li>
           <li>

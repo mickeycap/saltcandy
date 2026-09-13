@@ -13,7 +13,7 @@ import tailwindcss from '@tailwindcss/vite'
 const isProduction = process.env.VERCEL_ENV === 'production'
 
 /** Confirmed production origin, or the documented placeholder (LAUNCH-BLOCKERS.md). */
-const siteUrl = (process.env.VITE_SITE_URL ?? 'https://shift.example').replace(/\/+$/, '')
+const siteUrl = (process.env.VITE_SITE_URL?.trim() || 'https://shift.example').replace(/\/+$/, '')
 
 const PUBLIC_ROUTES = ['/', '/our-story', '/privacy', '/terms'] as const
 

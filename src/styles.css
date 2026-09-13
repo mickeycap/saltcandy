@@ -167,6 +167,138 @@
   &:focus { transform: none; }
 }
 
+/* Editorial conversion redesign. Existing brand tokens remain the source of color. */
+.eyebrow { font-size: .67rem; letter-spacing: .15em; text-transform: uppercase; font-weight: 600; line-height: 1.7; }
+.shift-hero { overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: 30px; padding-top: 64px; padding-bottom: 62px; }
+.hero-copy h1 { font-size: clamp(64px, 6.5vw, 94px); letter-spacing: -.065em; line-height: .97; margin: 24px 0; }
+.hero-copy h1 span { color: var(--color-cherry); }
+.status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--color-cherry); margin-right: 6px; }
+.hero-intro { font-size: 20px; line-height: 1.5; }
+.hero-description { max-width: 370px; color: var(--color-ink-soft); font-size: 14px; line-height: 1.8; margin-top: 18px; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 28px; }
+.hero-actions > a:not(.pill) { font-size: 13px; }
+.hero-note { font-size: 10px; margin-top: 22px; color: var(--color-ink-soft); }
+.hero-art { margin-right: -70px; align-self: center; }
+.hero-art img { width: 100%; border-radius: 160px 160px 12px 12px; aspect-ratio: 1.25; object-fit: cover; }
+.hero-art figcaption { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding: 18px 2px; font-size: 11px; }
+.hero-art figcaption > span:first-child { font-size: 9px; letter-spacing: .12em; color: var(--color-cherry); }
+.concept-label { margin-left: auto; font-size: 9px; color: var(--color-ink-soft); }
+.moment-strip { background: var(--color-citrus); color: var(--color-ink); min-height: 52px; display: flex; align-items: center; justify-content: center; gap: clamp(20px, 5vw, 76px); padding: 14px 20px; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; font-weight: 600; }
+.moment-strip [aria-hidden] { font-size: 20px; }
+.collection { padding-top: 90px; padding-bottom: 80px; }
+.section-topline { display: flex; justify-content: space-between; border-top: 1px solid color-mix(in oklab,var(--color-ink) 20%,transparent); padding-top: 18px; gap: 12px; }
+.edition { font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
+.collection-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin: 24px 0 36px; }
+.collection h2, .lifestyle-copy h2 { font-size: clamp(38px,4vw,56px); letter-spacing: -.055em; line-height: 1.05; }
+.collection-heading > p { font-size: 14px; line-height: 1.8; color: var(--color-ink-soft); }
+.concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.flavor-card { border-radius: 14px; overflow: hidden; background: var(--color-citrus-soft); }
+.flavor-card.evening { background: var(--color-dusk-soft); }
+.flavor-photo { position: relative; }
+.flavor-photo img { width: 100%; aspect-ratio: 1.65; object-fit: cover; }
+.flavor-number, .development-tag { position: absolute; top: 20px; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; }
+.flavor-number { left: 24px; }
+.development-tag { right: 20px; background: var(--color-cream); border-radius: 30px; padding: 5px 9px; }
+.flavor-copy { padding: 28px 32px 20px; }
+.flavor-copy .eyebrow { font-size: 9px; }
+.flavor-copy h3 { font-size: 36px; letter-spacing: -.05em; margin: 10px 0 3px; }
+.flavor-name { font-size: 16px; }
+.flavor-description { font-size: 13px; line-height: 1.8; max-width: 360px; margin-top: 18px; color: var(--color-ink-soft); }
+.flavor-bottom { display: flex; align-items: center; justify-content: space-between; margin: 24px 0; font-size: 13px; }
+.mini-horizon { width: 40px; height: 20px; border-radius: 40px 40px 0 0; background: var(--color-citrus); position: relative; }
+.mini-horizon::after { content: ''; position: absolute; width: 40px; height: 20px; top: 20px; left: 8px; background: var(--color-cherry); border-radius: 0 0 40px 40px; }
+.evening .mini-horizon { background: var(--color-dusk); }
+.concept-details { margin-top: 30px; border-top: 1px solid color-mix(in oklab,var(--color-ink) 15%,transparent); font-size: 11px; }
+.concept-details summary { min-height: 48px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 600; }
+.concept-details p { line-height: 1.8; padding-bottom: 12px; }
+.collection-note { font-size: 10px; color: var(--color-ink-soft); margin-top: 20px; line-height: 1.6; }
+.philosophy-band { color: var(--color-cream); background: var(--color-ink); padding: 80px 0; }
+.philosophy-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 70px; }
+.philosophy-band .eyebrow { color: var(--color-dusk); }
+.philosophy-band h2 { font-size: clamp(38px,4vw,58px); line-height: 1.06; letter-spacing: -.05em; margin-top: 24px; }
+.philosophy-band h2 span { color: var(--color-dusk); }
+.philosophy-symbol { height: 90px; width: 90px; margin-top: 24px; margin-left: -18px; }
+.philosophy-copy { padding-top: 38px; max-width: 400px; }
+.philosophy-lede { font-size: 27px; line-height: 1.35; }
+.philosophy-copy > p:not(.philosophy-lede) { color: var(--color-cream); opacity: .85; font-size: 14px; line-height: 1.8; margin-top: 20px; }
+.philosophy-copy .story-link { margin-top: 25px; color: var(--color-cream); font-size: 12px; text-decoration: underline; }
+.philosophy-band :focus-visible { outline-color: var(--color-citrus); }
+.lifestyle-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 90px; padding-top: 95px; padding-bottom: 95px; }
+.lifestyle-photo { position: relative; }
+.lifestyle-photo img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 160px 160px 12px 12px; }
+.lifestyle-photo figcaption { font-size: 11px; margin-top: 16px; text-align: center; }
+.lifestyle-copy h2 { margin-top: 24px; }
+.lifestyle-copy > p:not(.eyebrow) { font-size: 14px; line-height: 1.8; color: var(--color-ink-soft); margin-top: 24px; max-width: 340px; }
+.moments-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 26px 0; font-size: 10px; }
+.moments-list span { padding-top: 14px; border-top: 1px solid color-mix(in oklab,var(--color-ink) 15%,transparent); }
+.lifestyle-copy > a { font-size: 12px; }
+#faq > .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; }
+#faq > .wrap > div:last-child { margin-top: 0; }
+#faq summary { font-size: 15px; min-height: 36px; }
+#faq details p { font-size: 13px; }
+.signup-section { background: var(--color-dusk-soft); position: relative; overflow: hidden; }
+.signup-heading { font-size: clamp(44px,5vw,68px); line-height: 1.03; letter-spacing: -.055em; margin-top: 20px; }
+.signup-section .pill { white-space: nowrap; }
+.signup-section > .wrap { position: relative; }
+.signup-section::before { content:''; position:absolute; width:240px; height:120px; border-radius:240px 240px 0 0; background:var(--color-dusk); left:-110px; bottom:0; }
+.signup-section::after { content:''; position:absolute; width:180px; height:90px; border-radius:0 0 180px 180px; background:var(--color-citrus); right:-80px; top:0; }
+.consent-banner { position: sticky; bottom: 0; z-index: 50; display: grid; grid-template-columns: 170px 1fr 340px; align-items: center; gap: 20px; box-shadow: 0 -4px 20px #2e1b3d08; }
+.consent-banner > div { margin-top: 0; }
+.consent-banner > p:nth-child(2) { max-width: 650px; font-size: 11px; }
+.consent-banner .pill { font-size: 11px; }
+.consent-banner > div > button:last-child { min-height: 30px; padding: 0; font-size: 11px; }
+footer a, footer button { display: inline-flex; align-items: center; min-height: 32px; }
+@media (min-width: 1500px) { .hero-art { margin-right: -30px; } }
+@media (max-width: 1023px) {
+  .hero-grid { grid-template-columns: 1fr 1fr; gap: 20px; padding-top: 45px; padding-bottom: 40px; }
+  .hero-copy h1 { font-size: 66px; }
+  .hero-art { margin-right: 0; }
+  .hero-art img { border-radius: 100px 100px 10px 10px; aspect-ratio: 1; object-fit: contain; background: var(--color-surface); }
+  .concept-label { margin-left: 0; width: 100%; }
+  .hero-art figcaption { gap: 5px 10px; }
+  .philosophy-grid, .lifestyle-grid { gap: 40px; }
+  .consent-banner { grid-template-columns: 1fr 280px; gap: 8px 25px; }
+  .consent-banner > p:first-child { grid-column: 1; }
+  .consent-banner > p:nth-child(2) { grid-column: 1; }
+  .consent-banner > div { grid-column: 2; grid-row: 1 / 3; }
+}
+@media (max-width: 767px) {
+  .hero-grid { grid-template-columns: 1fr; padding-top: 38px; gap: 30px; padding-bottom: 20px; }
+  .hero-copy h1 { font-size: clamp(62px,15vw,86px); margin: 20px 0; }
+  .hero-copy .eyebrow { font-size: 9px; }
+  .hero-intro { font-size: 18px; }
+  .hero-description { font-size: 13px; max-width: 390px; }
+  .hero-actions { margin-top: 22px; gap: 15px; }
+  .hero-note { margin-top: 15px; font-size: 9px; }
+  .hero-art img { aspect-ratio: 1.5; border-radius: 90px 90px 8px 8px; object-fit: cover; }
+  .hero-art figcaption { font-size: 10px; padding: 12px 0; }
+  .moment-strip { gap: 15px; font-size: 8px; letter-spacing: .06em; justify-content: space-evenly; }
+  .moment-strip span:nth-last-child(-n+2) { display: none; }
+  .collection { padding-top: 52px; padding-bottom: 50px; }
+  .edition { display: none; }
+  .collection-heading { display: block; margin-top: 20px; }
+  .collection-heading > p { margin-top: 20px; font-size: 13px; }
+  .desktop-break { display: none; }
+  .concept-grid, .philosophy-grid, .lifestyle-grid, #faq > .wrap { grid-template-columns: 1fr; }
+  .flavor-copy { padding: 24px; }
+  .flavor-copy h3 { font-size: 32px; }
+  .philosophy-band { padding: 50px 0; }
+  .philosophy-grid { gap: 12px; }
+  .philosophy-symbol { height: 64px; width: 64px; margin-left: -12px; }
+  .philosophy-copy { padding-top: 0; }
+  .lifestyle-grid { gap: 35px; padding-top: 55px; padding-bottom: 55px; }
+  .lifestyle-photo img { aspect-ratio: 1.2; }
+  .lifestyle-copy h2 br:last-child { display: none; }
+  #faq > .wrap { gap: 30px; }
+  .signup-section::before, .signup-section::after { display: none; }
+  .signup-section { padding-top: 60px; padding-bottom: 45px; }
+  .signup-section > .wrap > div > p:nth-of-type(2) { font-size: 15px; }
+  .consent-banner { position: relative; grid-template-columns: 1fr; gap: 4px; padding: 16px 20px; }
+  .consent-banner > div { grid-column: 1; grid-row: auto; margin-top: 8px; }
+  .consent-banner > p:nth-child(2) { font-size: 12px; }
+  .consent-banner .pill { font-size: 12px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

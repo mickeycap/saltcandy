@@ -1,83 +1,28 @@
-import { CONCEPTS, type Concept } from '../lib/products'
+import { CONCEPTS } from '../lib/products'
 import { LaunchCta } from './LaunchCta'
-import { Section, SectionHeading } from './Section'
-
-function ConceptCard({ concept }: { concept: Concept }) {
-  const morning = concept.tone === 'morning'
-  return (
-    <article
-      className={`flex flex-col overflow-hidden rounded-card ${
-        morning ? 'bg-morning-soft' : 'bg-evening-soft'
-      }`}
-    >
-      <div className="relative px-6 pt-6 sm:px-8 sm:pt-8">
-        <p className="absolute top-5 right-5 rounded-pill bg-cream/90 px-3 py-1 text-xs font-semibold tracking-wide text-ink uppercase sm:top-7 sm:right-7">
-          {concept.status}
-        </p>
-        {/* Prototype crop (~355×333) with the pouch label baked in; capped at
-            native width so it never softens further. */}
-        <picture className="block">
-          <source
-            type="image/webp"
-            srcSet={`${concept.image.webpSmall} ${Math.round(concept.image.width / 2)}w, ${concept.image.webp} ${concept.image.width}w`}
-            sizes={`(min-width: 640px) ${concept.image.width}px, min(100vw - 5rem, ${concept.image.width}px)`}
-          />
-          <img
-            src={concept.image.png}
-            width={concept.image.width}
-            height={concept.image.height}
-            alt={concept.image.alt}
-            loading="lazy"
-            decoding="async"
-            className="mx-auto w-full rounded-[calc(var(--radius-card)-0.5rem)]"
-            style={{ maxWidth: concept.image.width }}
-          />
-        </picture>
-      </div>
-
-      <div className="flex flex-1 flex-col p-6 sm:p-8">
-        <p className={`text-sm font-semibold ${morning ? 'text-cherry' : 'text-cherry'}`}>
-          {concept.moment}
-        </p>
-        <h3 className="mt-2 text-2xl sm:text-3xl">{concept.name}</h3>
-        <p className="mt-1 text-lg font-medium text-ink">{concept.flavorDirection}</p>
-        <p className="mt-4 leading-relaxed text-muted-foreground">{concept.description}</p>
-
-        <dl className="mt-6 grid gap-3 border-t border-ink/10 pt-5 text-sm">
-          <div className="flex gap-3">
-            <dt className="w-24 shrink-0 font-semibold text-ink">Exploring</dt>
-            <dd className="text-muted-foreground">{concept.functionDirection}</dd>
-          </div>
-          <div className="flex gap-3">
-            <dt className="w-24 shrink-0 font-semibold text-ink">Format</dt>
-            <dd className="text-muted-foreground">Hard or sour candy concept — may change during development</dd>
-          </div>
-        </dl>
-
-        <div className="mt-6">
-          <LaunchCta variant="text" />
-        </div>
-      </div>
-    </article>
-  )
-}
-
 export function ProductConcepts() {
   return (
-    <Section id="products">
-      <SectionHeading
-        eyebrow="Two moments"
-        title="Different moments. Same you."
-        lede="Both concepts are in development. Flavours, ingredients, formats and serving sizes are still being worked out — and we'd rather get one candy excellent than two candies rushed."
-      />
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:gap-8">
-        {CONCEPTS.map((concept) => (
-          <ConceptCard key={concept.slug} concept={concept} />
+    <section id="products" className="collection wrap">
+      <div className="section-topline"><p className="eyebrow">The first two flavor directions</p><span className="edition">The SHIFT collection / 001</span></div>
+      <div className="collection-heading"><h2>Different moments.<br />Same you.</h2><p>Something bright. Something deep.<br />Two candy concepts to make the everyday<br className="desktop-break" /> a little more delicious.</p></div>
+      <div className="concept-grid">
+        {CONCEPTS.map((concept, index) => (
+          <article key={concept.slug} className={`flavor-card ${concept.tone}`}>
+            <div className="flavor-photo">
+              <img src={`/shift/${concept.tone}-v2-960.webp`} srcSet={`/shift/${concept.tone}-v2-480.webp 480w, /shift/${concept.tone}-v2-960.webp 960w`} sizes="(min-width: 768px) 46vw, 92vw" width={1536} height={1024} alt={index === 0 ? 'Golden candy concept with fresh lemon and ginger in warm sunlight' : 'Ruby candy concept with tart cherries on lavender stone'} loading="lazy" />
+              <span className="flavor-number">0{index + 1} / {index === 0 ? 'DAY' : 'DUSK'}</span><span className="development-tag">In development</span>
+            </div>
+            <div className="flavor-copy">
+              <p className="eyebrow">{concept.moment}</p>
+              <h3>{concept.name}</h3><p className="flavor-name">{concept.flavorDirection}</p>
+              <p className="flavor-description">{concept.description}</p>
+              <div className="flavor-bottom"><LaunchCta variant="text" /><span className="mini-horizon" aria-hidden="true" /></div>
+              <details className="concept-details"><summary>What we’re exploring <span aria-hidden="true">+</span></summary><p>{concept.functionDirection}. Hard or sour candy is our starting point; ingredients, format and serving size may change. No functional benefits are claimed.</p></details>
+            </div>
+          </article>
         ))}
       </div>
-      <p className="mt-6 text-sm text-muted-foreground">
-        Packaging, ingredients and claims are subject to development and review. Nothing shown is for sale.
-      </p>
-    </Section>
+      <p className="collection-note">A taste of the direction, not the finished product. Images are concept illustrations. Nothing is for sale yet.</p>
+    </section>
   )
 }

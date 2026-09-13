@@ -9,10 +9,12 @@ export function LaunchCta({
   variant = 'primary',
   className = '',
   children = 'Get launch updates',
+  onClick,
 }: {
   variant?: 'primary' | 'secondary' | 'text'
   className?: string
   children?: ReactNode
+  onClick?: () => void
 }) {
   const styles =
     variant === 'primary'
@@ -21,9 +23,9 @@ export function LaunchCta({
         ? 'pill border border-ink/25 text-ink hover:border-ink hover:bg-ink/5'
         : 'inline-flex items-center gap-1.5 font-semibold text-link underline-offset-4 hover:text-link-hover hover:underline'
   return (
-    <Link to="/" hash="launch-updates" className={`${styles} ${className}`}>
+    <Link to="/" hash="launch-updates" onClick={onClick} className={`${styles} ${className}`}>
       {children}
-      {variant === 'text' ? <span aria-hidden="true">→</span> : null}
+      <span aria-hidden="true">↗</span>
     </Link>
   )
 }

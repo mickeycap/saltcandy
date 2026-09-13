@@ -10,7 +10,7 @@ export const SITE_NAME = 'SHIFT'
 export const TAGLINE = 'Candy for moments.'
 
 export const SITE_URL_PLACEHOLDER = 'https://shift.example'
-export const SITE_URL = (import.meta.env.VITE_SITE_URL ?? SITE_URL_PLACEHOLDER).replace(/\/+$/, '')
+export const SITE_URL = (import.meta.env.VITE_SITE_URL?.trim() || SITE_URL_PLACEHOLDER).replace(/\/+$/, '')
 export const SITE_URL_IS_PLACEHOLDER = !import.meta.env.VITE_SITE_URL
 
 export const INDEXABLE: boolean = typeof __INDEXABLE__ === 'boolean' ? __INDEXABLE__ : false
