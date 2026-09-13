@@ -33,19 +33,18 @@ export function LaunchSignup() {
   }
 
   return (
-    <Section id="launch-updates" className="scroll-mt-24">
+    <Section id="launch-updates" className="signup-section scroll-mt-24">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="mb-3 text-sm font-semibold tracking-wide text-link uppercase">Launch list</p>
-        <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem]">Get launch updates.</h2>
+        <p className="eyebrow">Something sweet is taking shape</p>
+        <h2 className="signup-heading">Your next little<br />good thing.</h2>
         <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-          One email when there’s something real to try. No countdowns, no
-          drip campaigns.
+          Follow the first SHIFT. Get launch updates when there’s something real to try.
         </p>
 
         <form
           onSubmit={onSubmit}
           noValidate
-          className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
+          className="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:flex-row"
           aria-describedby={noteId}
         >
           <div className="flex-1 text-left">
@@ -59,9 +58,11 @@ export function LaunchSignup() {
               inputMode="email"
               autoComplete="email"
               spellCheck={false}
+              maxLength={254}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value)
+                setDemoDone(false)
                 if (error) setError(null)
               }}
               placeholder="you@example.com"

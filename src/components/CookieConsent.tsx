@@ -50,7 +50,7 @@ export function CookieConsent() {
         <div
           role="region"
           aria-label="Cookie preferences"
-          className="fixed inset-x-3 bottom-3 z-50 rounded-card border border-ink/15 bg-cream p-3.5 shadow-[0_20px_50px_-20px_var(--color-plum)] sm:inset-x-auto sm:right-6 sm:bottom-6 sm:max-w-md sm:p-5"
+          className="consent-banner border-t border-ink/15 bg-cream p-4 sm:p-5"
         >
           <p className="text-sm font-semibold text-ink">Cookies and storage</p>
           <p className="mt-1 text-[0.8125rem] leading-snug text-muted-foreground sm:text-sm sm:leading-relaxed">
@@ -73,7 +73,7 @@ export function CookieConsent() {
             <button
               type="button"
               onClick={() => decide({ analytics: true, marketing: true })}
-              className="pill min-h-11 bg-primary px-4 text-sm text-primary-foreground hover:bg-primary-hover"
+              className="pill min-h-11 border border-ink/25 px-4 text-sm text-ink hover:border-ink hover:bg-ink/5"
             >
               Accept optional
             </button>

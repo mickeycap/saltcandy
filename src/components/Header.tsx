@@ -4,7 +4,7 @@ import { Logo } from './Logo'
 import { LaunchCta } from './LaunchCta'
 
 const NAV = [
-  { label: 'Products', to: '/' as const, hash: 'products' },
+  { label: 'The candy', to: '/' as const, hash: 'products' },
   { label: 'Our story', to: '/our-story' as const },
   { label: 'FAQ', to: '/' as const, hash: 'faq' },
 ]
@@ -85,7 +85,7 @@ export function Header() {
             </Link>
           ))}
           <div className="mt-3 px-3 pb-2">
-            <LaunchCta className="w-full" />
+            <LaunchCta className="w-full" onClick={() => setOpen(false)} />
           </div>
         </nav>
       </div>

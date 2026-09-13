@@ -1,5 +1,31 @@
 # SHIFT — prelaunch prototype
 
+## Conversion redesign
+
+Feature branch: `feature/shift-conversion-redesign`.
+Editorial hero, responsive concept photography, distinct day/dusk flavor cards,
+compact exploratory details, a clearer signup destination and mobile menu fix.
+All primary CTAs lead to `/#launch-updates`; the form remains an explicit demo.
+No marketing provider or tracker has been added.
+
+The supplied `shift-handoff` corresponds to `handoff/shift` in this repository.
+Read `handoff/shift/START-HERE.md` and `handoff/shift/generated/README.md`.
+Original images are preserved; the homepage now uses the new `*-v2-*.webp` files.
+
+Production-build smoke check (preview/noindex environment):
+
+```bash
+npm ci
+npm run typecheck
+npm run build
+PORT=3103 npm run start
+node scripts/verify-preview.mjs http://127.0.0.1:3103
+```
+
+The repository does not define lint or unit-test scripts. Browser interaction
+checks supplement typecheck and the HTTP smoke check. If the local file watcher
+hits EMFILE, serve the compiled build with `npm run start`.
+
 **Candy for moments.** A responsive prelaunch website for SHIFT, a candy brand
 in development. Two concepts — Morning Shift (salty lemon + ginger) and
 Evening Shift (tart cherry) — presented as *in development*. Nothing is for

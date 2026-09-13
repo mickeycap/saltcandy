@@ -1,45 +1,9 @@
-import { Section } from './Section'
-
-const MOMENTS = ['The first coffee', 'Between meetings', 'After the run', 'The last light of the day']
-
+import { ArrowLink } from './LaunchCta'
 export function Lifestyle() {
   return (
-    <Section id="moments">
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        {/* Prototype lifestyle crop (297×304) with headline and logo baked in.
-            Shown small on purpose; a text-free render replaces it before launch. */}
-        <figure className="order-2 mx-auto w-full max-w-[297px] overflow-hidden rounded-card bg-surface lg:order-1 lg:justify-self-end">
-          <picture>
-            <source type="image/webp" srcSet="/shift/social-moment-sm.webp 148w, /shift/social-moment.webp 297w" sizes="297px" />
-            <img
-              src="/shift/social-moment.png"
-              width={297}
-              height={304}
-              alt="Three SHIFT hard candies — two golden, one cherry red — on a stone surface in soft light"
-              loading="lazy"
-              decoding="async"
-              className="w-full"
-            />
-          </picture>
-        </figure>
-        <div className="order-1 lg:order-2">
-          <p className="mb-3 text-sm font-semibold tracking-wide text-link uppercase">Moments</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem]">Make room for a moment.</h2>
-          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            A little candy, a short pause. Not a ritual, not a regimen — just
-            something small and good, at the points in the day where a small
-            good thing is welcome.
-          </p>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {MOMENTS.map((m) => (
-              <li key={m} className="flex items-center gap-3 rounded-xl bg-surface px-4 py-3 font-medium text-ink">
-                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-citrus" aria-hidden="true" />
-                {m}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </Section>
+    <section id="moments" className="wrap lifestyle-grid">
+      <figure className="lifestyle-photo"><img src="/shift/morning-v2-960.webp" srcSet="/shift/morning-v2-480.webp 480w, /shift/morning-v2-960.webp 960w" sizes="(min-width: 768px) 45vw, 90vw" width={1536} height={1024} alt="Sunlit golden hard candy concept beside lemon and fresh ginger" loading="lazy" /><figcaption>A little candy. A moment for you.</figcaption></figure>
+      <div className="lifestyle-copy"><p className="eyebrow">The good in the in-between</p><h2>Your day is full.<br />This moment<br />is yours.</h2><p>Between the first coffee and the last open tab, there’s room for something small and good. A bright bite. A little pause. Just because.</p><div className="moments-list"><span>The first coffee</span><span>The afternoon pause</span><span>The long way home</span><span>The last light</span></div><ArrowLink to="/" hash="launch-updates">Get launch updates</ArrowLink></div>
+    </section>
   )
 }
